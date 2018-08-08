@@ -16,4 +16,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require highcharts
+//= require chartkick
 //= require_tree .

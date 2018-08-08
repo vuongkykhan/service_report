@@ -23,5 +23,4 @@ class Bug < ActiveRecord::Base
   scope :bug_has_closed, -> { where status: 90 }
   scope :with_exist_handler, -> { where.not(handler_id: 0) }
   scope :without_non_exist_user, -> { where.not(handler_id: 3).where.not(handler_id: 178) }
-
 end
