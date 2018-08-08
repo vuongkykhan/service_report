@@ -1,0 +1,26 @@
+<tr>
+	<td><%= bug.id %></td>
+	<td><%= bug.reporter.username %></td>
+	<td><%= bug.handler.username %></td>
+	<td><%= bug.status %></td>
+	<td><p class="truncate"><%= bug.category.name.last(-2) %></p></td>
+	<td><p class="truncate"><%= bug.summary %></p></td>
+	<% fields = bug.custom_fields.without_card_note_contact %>
+	<% fields.each do |field| %>
+		<td>
+			<% if field.value.length > 0 %>
+				<p class="truncate"><%= field.value %></p>
+			<% else %>
+				<%= "null" %>
+			<% end %>
+		</td>
+	<% end %>
+</tr>
+<style type="text/css">
+	.truncate {
+	  width: 150px;
+	  white-space: nowrap;
+	  overflow: hidden;
+	  text-overflow: ellipsis;
+	}
+</style>
