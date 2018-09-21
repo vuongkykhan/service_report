@@ -19,8 +19,14 @@ class Bug < ActiveRecord::Base
   belongs_to :handler, class_name: :User
   belongs_to :category
   has_many :custom_fields
+  has_many :bug_fields
+  has_many :fields, through: :bug_fields
 
   scope :bug_has_closed, -> { where status: 90 }
   scope :with_exist_handler, -> { where.not(handler_id: 0) }
   scope :without_non_exist_user, -> { where.not(handler_id: 3).where.not(handler_id: 178) }
+
+  def count_field
+    self.custom_fields.count  
+  end 
 end

@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/scratch-soft/themify-icons-rails.git
+  revision: af9160153187b577d32011fb3cf698a92d81a820
+  specs:
+    themify-icons-rails (1.0.1.2)
+      rails
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -83,12 +90,17 @@ GEM
     erubi (1.7.1)
     execjs (2.7.0)
     ffi (1.9.25)
+    font-awesome-rails (4.7.0.4)
+      railties (>= 3.2, < 6.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     highcharts-rails (6.0.3)
       railties (>= 3.1)
     i18n (1.1.0)
       concurrent-ruby (~> 1.0)
+    inline_svg (1.3.1)
+      activesupport (>= 3.0)
+      nokogiri (>= 1.6)
     io-like (0.3.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
@@ -108,6 +120,8 @@ GEM
       mini_mime (>= 0.1.1)
     marcel (0.3.2)
       mimemagic (~> 0.3.2)
+    material_design_icons (2.7.94)
+      inline_svg (~> 1.0)
     method_source (0.9.0)
     mimemagic (0.3.2)
     mini_mime (1.0.0)
@@ -213,10 +227,12 @@ DEPENDENCIES
   chartkick
   chromedriver-helper
   coffee-rails (~> 4.2)
+  font-awesome-rails (~> 4.7, >= 4.7.0.2)
   highcharts-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  material_design_icons
   mysql2 (>= 0.4.4, < 0.6.0)
   puma (~> 3.11)
   rails (~> 5.2.0)
@@ -224,6 +240,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   spring-watcher-listen (~> 2.0.0)
+  themify-icons-rails!
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

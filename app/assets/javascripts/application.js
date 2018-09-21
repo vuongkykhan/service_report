@@ -18,4 +18,5 @@
 //= require bootstrap
 //= require highcharts
 //= require chartkick
+//= require chartist.min
 //= require_tree .
