@@ -9,4 +9,5 @@ class CustomField < ActiveRecord::Base
 	scope :dept, -> { where field_id: 5 }  
 	scope :ip_address, -> { where field_id: 6 }
 	scope :without_card_note_contact, -> { where.not(field_id: 8).where.not(field_id: 9).where.not(field_id: 10) }  
+	scope :test1, -> { where value: "VN_HW_101-Mail帳號相關申請(Xin tài khoản liên quan Mail)" } 
 end

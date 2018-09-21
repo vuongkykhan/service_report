@@ -1,0 +1,2 @@
+module CommonPageHelper
+end

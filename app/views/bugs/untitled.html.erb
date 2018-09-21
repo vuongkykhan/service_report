@@ -1,0 +1,40 @@
+
+<!-- Table -->
+<div class="row">
+  <!-- column -->
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+          <!-- title -->
+          <div class="d-md-flex align-items-center">
+              <div>
+                  <h4 class="card-title">使用者報修明細表</h4>
+                  <!-- <h5 class="card-subtitle">Overview of Top Selling Items</h5> -->
+              </div>
+          </div>
+          <!-- title -->
+      </div>
+      <div class="table-responsive">
+        <table class="table v-middle">
+          <thead>
+            <tr class="bg-light">
+              <th class="border-top-0">報修者</th>
+              <th class="border-top-0">類別</th>
+              <!-- <th class="border-top-0">概要</th> -->
+              <th class="border-top-0">服務項目</th>
+              <th class="border-top-0">財產編號</th>
+              <th class="border-top-0">廠別</th>
+              <th class="border-top-0">部門</th>
+              <th class="border-top-0">IP地址</th>
+							<th class="border-top-0">電話</th>
+							<th class="border-top-0">處理者</th>
+              <th class="border-top-0">狀態</th>
+            </tr>
+          </thead>
+          <%= render @bugs %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Table -->

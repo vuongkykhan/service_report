@@ -39,6 +39,10 @@ gem 'bootstrap'
 gem 'jquery-rails'
 gem 'chartkick'
 gem 'highcharts-rails'
+gem 'themify-icons-rails' , github: 'scratch-soft/themify-icons-rails'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
+gem 'material_design_icons'
+gem 'bootstrap_sb_admin_base_v1'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
