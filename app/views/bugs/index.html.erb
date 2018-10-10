@@ -1,95 +1,51 @@
-<!-- Table -->
 <div class="row">
-  <!-- column -->
-  <div class="col-12">
-    <div class="card">
-      <div class="card-body">
-          <!-- title -->
-          <div class="d-md-flex align-items-center">
-              <div>
-                  <h4 class="card-title">使用者報修明細表</h4>
-                  <!-- <h5 class="card-subtitle">Overview of Top Selling Items</h5> -->
-              </div>
-          </div>
-          <!-- title -->
+  <div class="col-12 col-lg-12">
+    <div class="card card-table">
+      <div class="card-header">
+        <div class="title">每個人的總工作量</div>
       </div>
-      <div class="table-responsive">
-        <table class="table v-middle">
-          <thead>
-            <tr class="bg-light">
-              <th class="border-top-0">報修者</th>
-              <th class="border-top-0">類別</th>
-              <!-- <th class="border-top-0">概要</th> -->
-              <th class="border-top-0">服務項目</th>
-              <th class="border-top-0">財產編號</th>
-              <th class="border-top-0">廠別</th>
-              <th class="border-top-0">部門</th>
-              <th class="border-top-0">IP地址</th>
-							<th class="border-top-0">電話</th>
-							<th class="border-top-0">處理者</th>
-              <th class="border-top-0">狀態</th>
-            </tr>
-          </thead>
-          <%= render @bugs %>
-        </table>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="chart">
+              <%= pie_chart @users.map { |user| [user.username, user.count_jobs] } %>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="chart">
+              <%= column_chart @users.map { |user| [user.username, user.count_jobs] } %>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
-<!-- Table -->
+
+<hr>
 
 <div class="row">
-	<div class="col-md-12">
-		<div class="card">
-			<div class="card-body">
-				<!-- title -->
-        <div class="d-md-flex align-items-center">
-            <div>
-                <h4 class="card-title">每個人的總工作量</h4>
-            </div>
-        </div>
-        <!-- title -->
+  <div class="col-12 col-lg-12">
+    <div class="card card-table">
+      <div class="card-header">
+        <div class="title">每項服務的總工作量</div>
+      </div>
+      <div class="card-body">
         <div class="row">
-        	<div class="col-lg-12">
-        		<!-- <h5 class="card-subtitle">Handler total jobs</h5> -->
-        		<!-- column -->
-            <div class="col-lg-12">
-                <div class="campaign ct-charts">
-									<%= column_chart @users.map { |user| [user.username, user.count_jobs] } %>
-                </div>
-                <p>1</p>
+          <div class="col-lg-12">
+            <div class="chart">
+              <%= pie_chart @service_categories.each { |key, value| [key, value] } %>
             </div>
-            <!-- column -->
-        	</div>
-        </div>
-			</div>
-		</div>
-
-		<div class="card">
-			<div class="card-body">
-				<!-- title -->
-        <div class="d-md-flex align-items-center">
-            <div>
-                <h4 class="card-title">每項服務的總工作量</h4>
+          </div>
+          <div class="col-lg-12">
+            <div class="chart">
+              <%= column_chart @service_categories.each { |key, value| [key, value] }, min: 100, height: "400px" %>
             </div>
+          </div>
         </div>
-        <!-- title -->
-        <div class="row">
-        	<div class="col-lg-12">
-        		<!-- <h5 class="card-subtitle">Handler total jobs</h5> -->
-        		<!-- column -->
-            <div class="col-lg-12">
-                <div class="campaign ct-charts">
-									<%= line_chart @service_categories.each { |key, value| [key, value] } %>
-                </div>
-                <p>1</p>
-            </div>
-            <!-- column -->
-        	</div>
-        </div>
-			</div>
-		</div>
-		
-	</div>
+      </div>
+    </div>
+  </div>
 </div>
 
+<hr>
